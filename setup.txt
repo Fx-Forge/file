@@ -32,21 +32,25 @@ git commit -m "Message"
 git push
 
 BASIC FLOW 5: CREATE A BRANCH, PUSH IT, AND PRACTISE MERGE/REBASE
+# Create a new branch
 git checkout -b branch_name
+
+# Create and commit a file
 echo "Hello" > file3.txt
 git status
 git add file3.txt
 git status
 git commit -m "Message"
-git push origin branch_name
 
+# Push the branch to GitHub
+git push -u origin branch_name
+
+# Merge the branch into main
 git checkout main
-
 git merge branch_name
-git rebase main
+git push origin main
 
-NOTE: After checking out main, `git merge branch_name` merges the branch into main.
-To practise rebasing the feature branch onto main, switch back to the feature branch first:
+# Practise rebasing the feature branch onto main
 git checkout branch_name
 git rebase main
 
